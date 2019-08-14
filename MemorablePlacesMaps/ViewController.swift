@@ -103,6 +103,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
             self.long =  String(coordinate.longitude)
             savedDataLongFromCore.append(self.long)
             
+            annotations.coordinate = coordinate
+            self.map.addAnnotation(annotations)
             
            self.save(latArraySave: savedDataLatFromCore, longArraySave: savedDataLongFromCore, titleArraySave: savedDataTitleFromCore)
         }))
@@ -114,8 +116,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
        // print(coordinate)
         
         
-        annotations.coordinate = coordinate
-        map.addAnnotation(annotations)
+       
    
     }
     
